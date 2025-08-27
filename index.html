@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Bento grid</title>
+   <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+</style>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --purple-100: hsl(254, 88%, 90%);
+      --purple-500: hsl(256, 67%, 59%);
+
+      --yellow-100: hsl(31, 66%, 93%);
+      --yellow-500: hsl(39, 100%, 71%);
+
+      --white: hsl(0, 0%, 100%);
+      --black: hsl(0, 0%, 7%);
+    }
+    img {
+      display: block;
+      max-width: 100%;
+    }
+    body {
+      background-color: #f2f2f2;
+      min-height: 100vh;
+      place-content: center;
+      display: grid;
+      font-family: 'DM sans';
+      font-size: 18px;
+      line-height: 1;
+    }
+    .xlg{
+      font-size: 4rem;
+      font-weight: 500;
+    }
+    .xx {
+      color:hsl(39, 100%, 71%) ;
+      font-size: 4rem;
+      
+    }
+    .xxx {
+      color:hsl(39, 100%, 71%) ;
+      font-size: 4rem;
+    }
+    .gl-text {
+      font-size: 2.5rem;
+      font-weight: 500;
+    }
+    .med-text {
+      font-size: 2.35rem;
+      font-weight: 500;
+    }
+    .sm-text {
+      font-size: 1.5rem;
+      font-weight: 400;
+      
+    }
+    .gl-text em {
+      color: hsl(256, 67%, 59%);;
+    }
+    .container {
+      
+      max-width: 1400px;
+      margin: 1rem;
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-auto-rows: 75px;
+      gap: 2rem;
+      grid-template-areas: 
+      'box1 box2 box2 box3'
+      'box1 box2 box2 box3'
+      'box1 box2 box2 box3'
+      'box1 box2 box2 box3'
+      'box1 box5 box6 box3'
+      'box4 box5 box6 box3'
+      'box4 box5 box6 box3'
+      'box4 box7 box8 box8'
+      'box4 box7 box8 box8'
+      'box4 box7 box8 box8'
+      ;
+
+    }
+
+    .container .item {
+      overflow: hidden;
+      border-radius: .5rem;
+
+    }
+    .container .item:nth-child(1) {
+      background-color: hsl(31, 66%, 93%);
+    }
+    .container .item:nth-child(2),
+    .container .item:nth-child(8) {
+      background-color: hsl(256, 67%, 59%);
+      color: var(--white);
+    }
+
+    .container .item:nth-child(4),
+    .container .item:nth-child(6) {
+      background-color: hsl(39, 100%, 71%);
+    }
+    .container .item:nth-child(3) {
+      background-color: hsl(254, 88%, 90%);
+    }
+    .container .item:nth-child(5),
+    .container .item:nth-child(7) {
+      background-color: var(--white);
+    }
+    .container .item:nth-child(1) {
+      grid-area: box1;
+      padding: 6rem 2rem 0 2.5rem;
+    }
+    .container .item:nth-child(1) img {
+      margin-top: 1rem;
+      
+    }
+    .container .item:nth-child(2) {
+      grid-area: box2;
+      padding: 2rem;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+    }
+    .container .item:nth-child(2) img {
+      margin-top: 1rem 0.5rem;
+      width: 250px;
+    }
+    .container .item:nth-child(3) {
+      grid-area: box3;
+      padding: 6rem 2rem 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    } 
+    .container .item:nth-child(3) img {
+      position: absolute;
+      object-fit: cover;
+      height: 410px;
+      object-position: left;
+      top: 150px;
+    }
+.container .item:nth-child(4) {
+  grid-area: box4;
+  padding: 2rem 2.90rem ;
+}
+.container .item:nth-child(4) p {
+  margin-bottom: 2rem;
+}
+.container .item:nth-child(5) {
+  grid-area: box5;
+  padding: 1rem 2rem 1rem 2rem;
+  position: relative;
+}
+.container .item:nth-child(5) p {
+  margin-top: 8rem;
+}
+.container .item:nth-child(5) img {
+  position: absolute;
+  object-fit: cover;
+  object-position: left;
+  
+}
+.container .item:nth-child(6) {
+  grid-area: box6;
+  padding: 1rem 2rem 1rem 2rem;
+  position: relative;
+}
+.container .item:nth-child(6) p {
+  margin-bottom: 3rem;
+}
+.container .item:nth-child(7) {
+  grid-area: box7;
+  padding: 1.5rem;
+}
+.container .item:nth-child(7) span {
+  margin-bottom: 1rem;
+  display: block;
+}
+.container .item:nth-child(7) img {
+  width: 250px;
+  margin-top: 2rem;
+}
+.container .item:nth-child(8) {
+  grid-area: box8;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 3rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width:1024px) {
+  .container {
+    grid-auto-rows: initial;
+    grid-template-areas:
+      'box1 box1 box2 box2'
+      'box1 box1 box2 box2'
+      'box3 box3 box4 box4'
+      'box3 box3 box4 box4'
+      'box5 box5 box6 box3'
+      'box5 box5 box6 box3'
+      'box4 box5 box6 box6'
+      'box4 box7 box8 box6'
+      'box7 box7 box8 box8'
+      'box7 box7 box8 box8'
+    ;
+  }
+  }
+
+  .container .item:nth-child(8) {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width:768px) {
+    .container .item {
+      text-align: center;
+    }
+  .container {
+    grid-template-areas: 
+    'box2'
+    'box5'
+    'box6'
+    'box3'
+    'box8'
+    'box7'
+    'box1'
+    'box4'
+    ;
+  }
+  .container .item:nth-child(4),
+  .container .item:nth-child(5),
+  .container .item:nth-child(6),
+  .container .item:nth-child(7){
+    text-align: left;
+  }
+  .container .item:nth-child(1) {
+    padding: 2rem;
+    text-align: left;
+  }
+  .container .item:nth-child(1).gl-text {
+    font-size: 2.5rem;
+  }
+  .container .item:nth-child(1) img  {
+    width: 250px;
+  }
+  .container .item:nth-child(3) {
+    padding: 2.75rem 1rem 2.5rem 1rem;
+
+  }
+  .container .item:nth-child(3) .gl-text {
+    font-size: 2.5rem;
+
+  }
+  .container .item:nth-child(3) img {
+    margin: 1rem 0;
+    position: initial;
+    height: initial;
+  }
+  .container .item:nth-child(5) p {
+    margin-top: 10rem;
+  }
+  .container .item:nth-child(8) {
+    padding: 1.5rem 4rem;
+  }
+  @media (max-width:540px) {
+    .container .item:nth-child(5) p {
+      margin-top: 6rem;
+    }
+  }
+}
+  </style>
+
+<body>
+  <div class="container">
+    <div class="item">
+      <div class="gl-text">Create and schedule content <em>quicker</em>.</div>
+      <img src="assets/images/illustration-create-post.webp" alt="">
+    </div>
+    <div class="item">
+      <p class="xlg"> Social Media <span class="xxx">10x</span> <em>Faster</em> with AI</p>
+      <img src="assets/images/illustration-five-stars.webp" alt="">
+      <p class="sm-text"> Over 4,000 5-star reviews</p>
+
+    </div>
+    <div class="item">
+      <p class="gl-text">Schedule to social media.</p>
+      <img src="assets/images/illustration-schedule-posts.webp" alt="">
+      <p class="sm-text">Optimize post timings to publish content at
+        the perfect time for
+        your audience.</p>
+
+    </div>
+    <div class="item">
+      <p class="gl-text">Write your content using Al.</p>
+      <img src="assets/images/illustration-ai-content.webp" alt="">
+    </div>
+    <div class="item">
+      <img src="assets/images/illustration-multiple-platforms.webp" alt="">
+      <p class="med-text">Manage multiple accounts and platforms.</p>
+    </div>
+    <div class="item">
+      <p class="gl-text">Maintain a consistent posting schedule.</p>
+      <img src="assets/images/illustration-consistent-schedule.webp" alt="">
+    </div>
+    <div class="item">
+      <p class="sm-text"><span class="xx">>56%</span> faster audince growth</p>
+      <img src="assets/images/illustration-audience-growth.webp" alt="">
+    </div>
+    <div class="item">
+      <img src="assets/images/illustration-grow-followers.webp" alt="">
+      <p class="gl-text">Grow followers with non-stop content.</p>
+    </div>
+  </div>
+
+  </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Ankit Kumar</a>.
+  </div>
+</body>
+
+</html>
